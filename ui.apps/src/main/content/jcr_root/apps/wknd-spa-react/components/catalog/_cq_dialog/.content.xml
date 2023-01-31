@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Catalog"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <catalog
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Catalog"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <lty
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                fieldLabel="lty"
+                                name="./lty"
+                                value="yes"/>
+                            <catalogIqosItemWarningPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author Iqos Item Warning Path"
+                                fieldLabel="Iqos Item Warning Path"
+                                name="./iqosItemWarningPath"
+                                predicate="nosystem"
+                                required="{Boolean}false"
+                                rootPath="/content/alcs"/>
+                            <catalogOnItemWarningPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Author On Item Warning Path"
+                                fieldLabel="On Item Warning Path"
+                                name="./onItemWarningPath"
+                                predicate="nosystem"
+                                required="{Boolean}false"
+                                rootPath="/content/alcs"/>    
+                            <catalogDisplayPoints
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select to Display Points"
+                                fieldLabel="Display Points"
+                                name="./catalogDisplayPoints"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="yes"/>
+                                    <no
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="no"/>
+                                </items>
+                            </catalogDisplayPoints>
+                            <catalogNumberOfColumns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select Number of Columns"
+                                fieldLabel="Number of Columns"
+                                name="./catalogNumberOfColumns"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <_x0035_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="5"
+                                        value="5"/>
+                                    <_x0034_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="4"
+                                        value="4"/>
+                                </items>
+                            </catalogNumberOfColumns>
+                            <catalogBackground
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".catalog-hide-show"
+                                fieldDescription="Select Background"
+                                fieldhideshow="{Boolean}true"
+                                fieldLabel="Background"
+                                name="./catalogBackground"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value="none"/>
+                                    <color
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Color"
+                                        value="color"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Image"
+                                        value="image"/>
+                                </items>
+                            </catalogBackground>
+                            <catalogBackgroundColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide catalog-hide-show"
+                                fieldDescription="Select Background Color"
+                                fieldLabel="Background Color"
+                                name="./catalogBackgroundColor"
+                                required="{Boolean}false"
+                                showhidetargetvalue="color">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <primary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Primary"
+                                        value="primary"/>
+                                    <secondary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Secondary"
+                                        value="secondary"/>
+                                    <tertiary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Tertiary"
+                                        value="tertiary"/>
+                                </items>
+                            </catalogBackgroundColor>
+                            <catalogBackgroundImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                class="hide catalog-hide-show"
+                                fieldLabel="Background Image"
+                                name="./catalogBackgroundImage"
+                                required="{Boolean}false"
+                                rootPath="/content/dam/alcs"
+                                showhidetargetvalue="image"/>
+                            <catalogPointAlignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select Point Alignment"
+                                fieldLabel="Point Alignment"
+                                name="./catalogPointAlignment"
+                                required="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="left"/>
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="center"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="right"/>
+                                </items>
+                            </catalogPointAlignment>
+                            <catalogDesktopIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Select the image for Desktop Icon"
+                                fieldLabel="Desktop Icon"
+                                name="./catalogDesktopIcon"
+                                required="{Boolean}false"
+                                rootPath="/content/dam/alcs"/>
+                            <catalogMobileIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Select the image for Mobile Icon"
+                                fieldLabel="Mobile Icon"
+                                name="./catalogMobileIcon"
+                                required="{Boolean}false"
+                                rootPath="/content/dam/alcs"/>
+                            <catalogIconAltText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Provide the Icon Alt Text"
+                                fieldLabel="Icon Alt Text"
+                                name="./catalogIconAltText"
+                                required="{Boolean}false"/>
+                            <catalogPointsHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Points Heading"
+                                name="./catalogPointsHeading"/>
+                            <catalogPointsLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Points Label"
+                                name="./catalogPointsLabel"/>
+                            <catalogSortbyLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Sort By Label"
+                                name="./catalogSortbyLabel"
+                                required="{Boolean}true"/>
+                            <catalogPointsLowHighLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Points Low to High Label"
+                                name="./catalogPointsLowHighLabel"
+                                required="{Boolean}true"/>
+                            <catalogPointsHighLowLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Points High to Low Label"
+                                name="./catalogPointsHighLowLabel"
+                                required="{Boolean}true"/>
+                            <catalogFilterLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Filter Label"
+                                name="./catalogFilterLabel"
+                                required="{Boolean}true"/>
+                            <catalogCloseFilterLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Close Filter Label"
+                                name="./catalogCloseFilterLabel"
+                                required="{Boolean}true"/>
+                            <catalogDoneCTALabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Done CTA Label"
+                                name="./catalogDoneCTALabel"
+                                required="{Boolean}true"/>
+                            <catalogClearAllFilterLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Clear All Filter Label"
+                                name="./catalogClearAllFilterLabel"
+                                required="{Boolean}true"/>
+                            <catalogItemPointsStarting
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Item Points Starting At label"
+                                name="./catalogItemPointsStarting"
+                                required="{Boolean}false"/>
+                            <catalogNoItemsAvailable
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="No Items Available – Filter Results message"
+                                name="./catalogNoItemsAvailable"
+                                required="{Boolean}true"/>
+                            <catalogErrorMessage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="When Comarch system is down"
+                                fieldLabel="Error Message"
+                                name="./catalogErrorMessage"
+                                required="{Boolean}true"/>
+                            <enablelazyload
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Enable Lazy load for images."
+                                fieldLabel="Enable Image Lazy Load"
+                                name="./enableLazyload">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="true"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="false"/>
+                                </items>
+                            </enablelazyload>
+                        </items>
+                    </columns>
+                </items>
+            </catalog>
+            <loadmore
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Load More Config"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/loadmore/cq:dialog/content/items/loadmore"/>
+            <themes
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Themes"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/themes/cq:dialog/content/items/themes"/>
+            <padding
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Padding"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/padding/cq:dialog/content/items/padding"/>
+            <errorscenario
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Error Scenario"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/errorscenario/cq:dialog/content/items/errorscenario"/>
+        </items>
+    </content>
+</jcr:root>

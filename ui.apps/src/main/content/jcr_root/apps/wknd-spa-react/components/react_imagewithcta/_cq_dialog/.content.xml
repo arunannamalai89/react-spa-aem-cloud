@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Image With CTA"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        ondialogsubmit="function(e,ns){clearRTEField();removeValidation_ImageWithCta(e,ns);validateImageAlt(desktopImage,altText);}">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <imgwithcta
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Image With CTA"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <authoringtype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".imageWithCta-hide-show"
+                                fieldDescription="Select Image with CTA variation"
+                                fieldhideshow="{Boolean}true"
+                                fieldLabel="Image With CTA variation"
+                                name="./imageWithCtaVariation">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <variation1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="With Image/icon above/below copy"
+                                        value="v1"/>
+                                    <variation2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="With background image  and link"
+                                        value="v2"/>
+                                    <variation3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="With background image and CTA with icon"
+                                        value="v3"/>
+                                    <variation4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="With background image, image, description and CTA"
+                                        value="v4"/>
+                                </items>
+                            </authoringtype>
+                            <background
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide imageWithCta-hide-show"
+                                showhidetargetvalue="v4">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <bgtype
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="cq-dialog-dropdown-showhide"
+                                        cq-dialog-dropdown-showhide-target=".imageWithCtaBg-hide-show"
+                                        fieldDescription="Select Background"
+                                        fieldhideshow="{Boolean}true"
+                                        fieldLabel="Background"
+                                        name="./backgroundType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="-None-"
+                                                value="none"/>
+                                            <image
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Image"
+                                                value="image"/>
+                                            <color
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Color"
+                                                value="color"/>
+                                        </items>
+                                    </bgtype>
+                                    <bgimage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container"
+                                        class="hide imageWithCtaBg-hide-show"
+                                        showhidetargetvalue="image">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <desktopimage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldDescription="Browse the path of the Desktop Image"
+                                                fieldLabel="Background Image"
+                                                name="./desktopImagev4"
+                                                rootPath="/content/dam/alcs"/>
+                                            <mobileimage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldLabel="Mobile Background Image"
+                                                name="./mobileImagev4"
+                                                rootPath="/content/dam/alcs"/>
+                                            <alttext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Image Alt Text"
+                                                name="./altTextv4"/>
+                                        </items>
+                                    </bgimage>
+                                    <bgcolor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="hide imageWithCtaBg-hide-show"
+                                        fieldLabel="Color"
+                                        name="./bgColor"
+                                        showhidetargetvalue="color">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="-Select-"
+                                                value=""/>
+                                            <primary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Primary"
+                                                value="primary"/>
+                                            <secondary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Secondary"
+                                                value="secondary"/>
+                                            <tertiary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Tertiary"
+                                                value="tertiary"/>
+                                        </items>
+                                    </bgcolor>
+                                </items>
+                            </background>
+                            <bgimages
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide imageWithCta-hide-show"
+                                showhidetargetvalue="v1,v2,v3">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <desktopimage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldDescription="Browse the path of the Desktop Image"
+                                        fieldLabel="Background Image"
+                                        name="./desktopImage"
+                                        rootPath="/content/dam/alcs"/>
+                                    <mobileimage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Mobile Background Image"
+                                        name="./mobileImage"
+                                        rootPath="/content/dam/alcs"/>
+                                    <alttext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Background Image Alt Text"
+                                        name="./altText"/>
+                                </items>
+                            </bgimages>
+                            <imageurl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                class="hide imageWithCta-hide-show"
+                                fieldDescription="Browse the path of the Image/Icon used above/below copy"
+                                fieldLabel="Image/Icon"
+                                name="./iconPath"
+                                rootPath="/content/dam/alcs"
+                                showhidetargetvalue="v1,v4"/>
+                            <imageurlMoblie
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                class="hide imageWithCta-hide-show"
+                                fieldDescription="Browse the path of the Image/Icon used above/below copy"
+                                fieldLabel="Image/icon - Mobile"
+                                name="./iconPathMobile"
+                                rootPath="/content/dam/alcs"
+                                showhidetargetvalue="v4"/>
+                            <imgalttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="Image Alt Text"
+                                name="./imageIconAltText"
+                                required="{Boolean}false"
+                                showhidetargetvalue="v1,v4"/>
+                            <iconlocation
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide imageWithCta-hide-show"
+                                fieldDescription="Image/Icon Location"
+                                fieldLabel="Image/Icon Location"
+                                name="./iconLocation"
+                                showhidetargetvalue="v1">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <top
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top"
+                                        value="top"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom"
+                                        value="bottom"/>
+                                </items>
+                            </iconlocation>
+                            <linklabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="Link Label"
+                                name="./linkLabel"
+                                required="{Boolean}false"
+                                showhidetargetvalue="v2"/>
+                            <linktitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="Link Title"
+                                name="./linkTitle"
+                                required="{Boolean}false"
+                                showhidetargetvalue="v2"/>
+                            <linkurl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="Link Url"
+                                name="./linkUrl"
+                                rootPath="/content/alcs"
+                                showhidetargetvalue="v2"/>
+                            <makeentirecomponentclickable
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="Make Entire Component Clickable"
+                                name="./makeEntireComponentClickable"
+                                showhidetargetvalue="v1,v2,v3,v4">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="yes"/>
+                                    <no
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="no"/>
+                                </items>
+                            </makeentirecomponentclickable>
+                            <ctaurl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="URL"
+                                name="./ctaUrl"
+                                rootPath="/content/alcs"
+                                showhidetargetvalue="v1,v3,v4"/>
+                            <ctalabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="CTA Label"
+                                name="./ctaLabel"
+                                required="{Boolean}false"
+                                showhidetargetvalue="v1,v3,v4"/>
+                            <ctatitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                class="hide imageWithCta-hide-show"
+                                fieldLabel="CTA Title"
+                                name="./ctaTitle"
+                                required="{Boolean}false"
+                                showhidetargetvalue="v1,v3,v4"/>
+                            <columnrte
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide imageWithCta-hide-show"
+                                showhidetargetvalue="v1,v3,v4">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/alcs/components/content/includewidget"
+                                        fieldLabel="Title and Description"
+                                        name="./description"
+                                        path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                        required="{Boolean}false"/>
+                                </items>
+                            </columnrte>
+                            <linktype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide imageWithCta-hide-show"
+                                fieldDescription="Select link type"
+                                fieldLabel="Link Type"
+                                name="./linkType"
+                                showhidetargetvalue="v2">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Default"
+                                        value="default"/>
+                                    <sametab
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Same Tab"
+                                        value="false"/>
+                                    <newtab
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New Tab"
+                                        value="true"/>
+                                </items>
+                            </linktype>
+                            <linkalignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide imageWithCta-hide-show"
+                                fieldDescription="Link Alignment"
+                                fieldLabel="Link Alignment"
+                                name="./linkAlignment"
+                                showhidetargetvalue="v2">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tright
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top Right"
+                                        value="topRight"/>
+                                    <tleft
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top Left"
+                                        value="topLeft"/>
+                                    <tcenter
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top Center"
+                                        value="topCenter"/>
+                                    <bright
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom Right"
+                                        value="bottomRight"/>
+                                    <bleft
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom Left"
+                                        value="bottomLeft"/>
+                                    <bcenter
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom Center"
+                                        value="bottomCenter"/>
+                                </items>
+                            </linkalignment>
+                            <ctatype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide imageWithCta-hide-show"
+                                fieldDescription="Select CTA type"
+                                fieldLabel="CTA Type"
+                                name="./ctaType"
+                                showhidetargetvalue="v1,v3,v4">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Default"
+                                        value="default"/>
+                                    <sametab
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Same Tab"
+                                        value="false"/>
+                                    <newtab
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New Tab"
+                                        value="true"/>
+                                </items>
+                            </ctatype>
+                            <ctaicon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide imageWithCta-hide-show"
+                                fieldDescription="Author the CTA Icon field."
+                                fieldLabel="CTA Icon"
+                                name="./ctaIcon"
+                                required="{Boolean}false"
+                                showhidetargetvalue="v1,v3,v4">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/alcs/components/datasource/datasource"
+                                    configKey="globalListPath"
+                                    dataSourceKey="icons-list"/>
+                            </ctaicon>
+                            <columncta
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide imageWithCta-hide-show"
+                                showhidetargetvalue="v1,v3,v4">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <ctasize
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="cq-dialog-dropdown-showhide"
+                                        cq-dialog-dropdown-showhide-target=".imageWithCtaStyle-hide-show"
+                                        fieldDescription="CTA Size"
+                                        fieldhideshow="{Boolean}true"
+                                        fieldLabel="CTA Size"
+                                        name="./ctaSize">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="-Select-"
+                                                value="select"/>
+                                            <small
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Small"
+                                                value="small"/>
+                                            <large
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Large"
+                                                value="large"/>
+                                        </items>
+                                    </ctasize>
+                                    <ctastylesmall
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="hide imageWithCtaStyle-hide-show"
+                                        fieldLabel="CTA Style"
+                                        name="./ctaStylesSmall"
+                                        showhidetargetvalue="small">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="-Select-"
+                                                value=""/>
+                                            <primary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Primary"
+                                                value="primary"/>
+                                            <secondary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Secondary"
+                                                value="secondary"/>
+                                        </items>
+                                    </ctastylesmall>
+                                    <ctastyleslarge
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="hide imageWithCtaStyle-hide-show"
+                                        fieldLabel="CTA Style"
+                                        name="./ctaStylesLarge"
+                                        showhidetargetvalue="large">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <select
+                                                jcr:primaryType="nt:unstructured"
+                                                text="-Select-"
+                                                value=""/>
+                                            <primary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Primary"
+                                                value="primary"/>
+                                            <secondary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Secondary"
+                                                value="secondary"/>
+                                            <branded
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Branded"
+                                                value="brand"/>
+                                            <tertiary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Tertiary"
+                                                value="tertiary"/>
+                                        </items>
+                                    </ctastyleslarge>
+                                    <fullwidth
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        fieldDescription="On the selection CTA will span across the container where the component is placed."
+                                        name="./fullWidth"
+                                        text="Full Width"
+                                        value="true"/>
+                                </items>
+                            </columncta>
+                            <chevron
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide imageWithCta-hide-show"
+                                showhidetargetvalue="v1,v4">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <chevron
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please select check box to enable chevron"
+                                        fieldLabel="Enable Chevron"
+                                        name="./enableChevron">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <no
+                                                jcr:primaryType="nt:unstructured"
+                                                text="No"
+                                                value="no"/>
+                                            <yes
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Yes"
+                                                value="yes"/>
+                                        </items>
+                                    </chevron>
+                                    <disclaimercopy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/alcs/components/content/includewidget"
+                                        fieldLabel="Disclaimer Copy"
+                                        name="./disclaimerCopy"
+                                        path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                        required="{Boolean}false"/>
+                                    <disclaimeralignmnt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please select Disclaimer Alignment"
+                                        fieldLabel="Disclaimer Alignment"
+                                        name="./disclaimerAlignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <bottom
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Bottom"
+                                                value="bottom"/>
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center"
+                                                value="center"/>
+                                        </items>
+                                    </disclaimeralignmnt>
+                                </items>
+                            </chevron>
+                            <var4
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide imageWithCta-hide-show"
+                                showhidetargetvalue="v4">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <contentalgnmnt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please select horizontal content alignment"
+                                        fieldLabel="Horizontal Content Alignment"
+                                        name="./horizontalContentAlignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <left
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Left"
+                                                value="left"/>
+                                            <right
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Right"
+                                                value="right"/>
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center"
+                                                value="center"/>
+                                        </items>
+                                    </contentalgnmnt>
+                                    <vcontentalgnmnt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Please select vertical content alignment"
+                                        fieldLabel="Vertical Content Alignment"
+                                        name="./verticalContentAlignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center"
+                                                value="center"/>
+                                            <top
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Top"
+                                                value="top"/>
+                                            <bottom
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Bottom"
+                                                value="bottom"/>
+                                        </items>
+                                    </vcontentalgnmnt>
+                                    <offset
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Offset"
+                                        name="./offset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <no
+                                                jcr:primaryType="nt:unstructured"
+                                                text="No"
+                                                value="no"/>
+                                            <yes
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Yes"
+                                                value="yes"/>
+                                        </items>
+                                    </offset>
+                                    <enableoverlay
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Enable Overlay On Mobile"
+                                        name="./enableOverlay">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <yes
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Yes"
+                                                value="yes"/>
+                                            <no
+                                                jcr:primaryType="nt:unstructured"
+                                                text="No"
+                                                value="no"/>
+                                        </items>
+                                    </enableoverlay>
+                                    <overlaycolor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Overlay Color"
+                                        name="./overlayColor">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <primary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Primary"
+                                                value="primary"/>
+                                            <secondary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Secondary"
+                                                value="secondary"/>
+                                            <tertiary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Tertiary"
+                                                value="tertiary"/>
+                                        </items>
+                                    </overlaycolor>
+                                    <mobilealignment
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Mobile Alignment"
+                                        name="./mobileContentAlignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <bottom
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Bottom"
+                                                value="bottom"/>
+                                            <top
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Top"
+                                                value="top"/>
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center"
+                                                value="center"/>
+                                        </items>
+                                    </mobilealignment>
+                                </items>
+                            </var4>
+                            <enablelazyload
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Enable Lazy load for images."
+                                fieldLabel="Enable Image Lazy Load"
+                                name="./enableLazyload">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="true"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="false"/>
+                                </items>
+                            </enablelazyload>
+                        </items>
+                    </columns>
+                </items>
+            </imgwithcta>
+            <themes
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Themes"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/themes/cq:dialog/content/items/themes"/>
+            <padding
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Padding"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/padding/cq:dialog/content/items/padding"/>
+        </items>
+    </content>
+</jcr:root>

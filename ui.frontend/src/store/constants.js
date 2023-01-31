@@ -1,0 +1,4 @@
+export const OPEN_MODAL = "OPEN_MODAL"
+export const CLOSE_MODAL = "CLOSE_MODAL"
+export const SET_REWARD_CODE = "SET_REWARD_CODE"
+export const RESET_REWARD_CODE = "RESET_REWARD_CODE"

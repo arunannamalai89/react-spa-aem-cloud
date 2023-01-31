@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Reward Detail"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        width="80rem">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <rewards
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Reward Details"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    width="80rem"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        width="">
+                        <items jcr:primaryType="nt:unstructured">
+                            <componentVariation
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide componentVariation"
+                                cq-dialog-dropdown-showhide-target=".componentvariation-hide-show"
+                                fieldDescription="Select the component variation"
+                                fieldLabel="Component Variation"
+                                name="./componentVariation"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Default"
+                                        value="default"/>
+                                    <modal
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Modal"
+                                        value="modal"/>
+                                </items>
+                            </componentVariation>
+                            <marketingContent
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Enable the marketing content"
+                                fieldLabel="Marketing Content"
+                                name="./marketingContent"
+                                required="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <enable
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Enable"
+                                        value="true"/>
+                                    <disable
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Disable"
+                                        value="false"/>
+                                </items>
+                            </marketingContent>
+                            <pinchZoom
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Enable the Pinch and Zoom"
+                                fieldLabel="Pinch &amp; Zoom"
+                                name="./pinchZoom">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <enable
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Enable"
+                                        value="true"/>
+                                    <disable
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Disable"
+                                        value="false"/>
+                                </items>
+                            </pinchZoom>
+                            <disableBackButton
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Enable/Disable the back to catalog"
+                                fieldLabel="Back to Catalog"
+                                name="./disableBackButton">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <enable
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Enable"
+                                        value="true"/>
+                                    <disable
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Disable"
+                                        value="false"/>
+                                </items>
+                            </disableBackButton>
+                            <learnMoreLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                class="hide componentvariation-hide-show"
+                                fieldDescription="Author the Learn More CTA Label"
+                                fieldLabel="Learn More CTA Label"
+                                name="./learnMoreCtaLabel"
+                                showhidetargetvalue="modal"/>
+                            <learnMoreCtaStyle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide componentvariation-hide-show"
+                                fieldLabel="Learn More CTA Style"
+                                name="./learnMoreCtaStyle"
+                                showhidetargetvalue="modal"
+                                value="primary">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <primary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Primary"
+                                        value="primary"/>
+                                    <secondary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Secondary"
+                                        value="secondary"/>
+                                    <tertiary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Tertiary"
+                                        value="tertiary"/>
+                                </items>
+                            </learnMoreCtaStyle>
+                            <backgroundOption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".backgroundcolor-hide-show"
+                                fieldDescription="Author to select  the  Background Option"
+                                fieldLabel="Background"
+                                name="./backgroundtype"
+                                required="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value="none"/>
+                                    <backgroundcolor
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Color"
+                                        value="color"/>
+                                </items>
+                            </backgroundOption>
+                            <backgroundColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="hide backgroundcolor-hide-show"
+                                fieldDescription="Author to select  the  Background Color"
+                                fieldLabel="Background Color"
+                                name="./backgroundColor"
+                                showhidetargetvalue="color">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <primary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Primary"
+                                        value="primary"/>
+                                    <secondary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Secondary"
+                                        value="secondary"/>
+                                    <tertiary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Tertiary"
+                                        value="tertiary"/>
+                                </items>
+                            </backgroundColor>
+                            <backtocatalogcta
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Back to Catalog Label"
+                                name="./backToCatalogCta"
+                                required="false"/>
+                            <startinglabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Starting at Label"
+                                name="./StartingLabel"
+                                required="false"/>
+                            <pointslabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Points Label"
+                                name="./pointsLabel"
+                                required="true"/>
+                            <lty
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                fieldLabel="lty"
+                                name="./lty"
+                                value="yes"/>
+                            <enablelazyload
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Enable Lazy load for images."
+                                fieldLabel="Enable Image Lazy Load"
+                                name="./enableLazyload">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="true"/>
+                                    <No
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="false"/>
+                                </items>
+                            </enablelazyload>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/alcs/components/content/includewidget"
+                                fieldLabel="Description"
+                                name="./descriptionheading"
+                                path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                required="{Boolean}false"/>
+                            <disclaimer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/alcs/components/content/includewidget"
+                                fieldLabel="Disclaimer"
+                                name="./descriptionlegal"
+                                path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                required="{Boolean}false"/>
+                            <pointstransferlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Points Transfer Button label"
+                                name="./pointsTransferLabel"
+                                required="false"/>
+                            <maxlimitlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Max Limit Reached button Label"
+                                name="./maxLimitLabel"
+                                required="false"/>
+                            <promoId
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Promo Id"
+                                name="./promoId"
+                                required="false"/>
+                            <targetbrand
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Target Brand"
+                                name="./targetBrand">
+                                <datasource
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/alcs/components/datasource/datasource"
+                                    configKey="globalListPath"
+                                    dataSourceKey="gtc-clientid-list"/>
+                            </targetbrand>
+                        </items>
+                    </columns>
+                </items>
+            </rewards>
+            <enrolled
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Enrolled"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    width="80rem"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        width="">
+                        <items jcr:primaryType="nt:unstructured">
+                            <itemamountlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Item Amount Label"
+                                name="./itemAmountLabel"
+                                required="false"/>
+                            <quantitylabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Quantity Label"
+                                name="./quantityLabel"
+                                required="false"/>
+                            <revieworderbuttonlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Review Your Order Button Label"
+                                name="./reviewOrderButtonLabel"
+                                required="true"/>
+                            <pointsremainingbuttonlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Points remaining button label"
+                                name="./pointsRemainingButtonLabel"
+                                required="true"/>
+                        </items>
+                    </columns>
+                </items>
+            </enrolled>
+            <unenrolled
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Unenrolled"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    width="80rem"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        width="">
+                        <items jcr:primaryType="nt:unstructured">
+                            <ctaLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="CTA label"
+                                name="./ctaLabel"
+                                required="false"/>
+                            <ctaUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Path field to select next slide"
+                                fieldLabel="CTA URL"
+                                name="./ctaUrl"
+                                rootPath="/content/alcs"/>
+                            <ctaStyle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="CTA Style"
+                                name="./ctaStyle"
+                                value="primary">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <primary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Primary"
+                                        value="primary"/>
+                                    <secondary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Secondary"
+                                        value="secondary"/>
+                                    <tertiary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Tertiary"
+                                        value="tertiary"/>
+                                </items>
+                            </ctaStyle>
+                        </items>
+                    </columns>
+                </items>
+            </unenrolled>
+            <theme
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Themes"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/themes/cq:dialog/content/items/themes"/>
+            <padding
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Padding"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/padding/cq:dialog/content/items/padding"/>
+            <errorscenario
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Error Scenario"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/errorscenario/cq:dialog/content/items/errorscenario"/>
+        </items>
+    </content>
+</jcr:root>

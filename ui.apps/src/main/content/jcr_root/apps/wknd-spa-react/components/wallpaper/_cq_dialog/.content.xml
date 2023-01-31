@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Wallpaper"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <wallpaper
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Wallpaper Detail"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <desktophHeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/alcs/components/content/includewidget"
+                                fieldLabel="Desktop Header"
+                                name="./desktopHeader"
+                                path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                required="{Boolean}true"/>
+                            <mobiletabHeader
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/apps/alcs/components/content/includewidget"
+                                    fieldLabel="Mobile / Tablet Header"
+                                    name="./mobileTabHeader"
+                                    path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                    required="{Boolean}true"/>
+                            <mobiletabinstruction
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/alcs/components/content/includewidget"
+                                fieldLabel="Mobile / Tablet Instructional Text"
+                                name="./mobileTabInstruction"
+                                path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                required="{Boolean}true"/>
+                            <desktopinstruction
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/apps/alcs/components/content/includewidget"
+                                fieldLabel="Desktop Instructional Text"
+                                name="./desktopInstruction"
+                                path="/apps/alcs/components/content/platform/richtexteditor/text"
+                                required="{Boolean}true"/>
+                            <dimensionfieldlabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Dimension Field Label"
+                                name="./dimensionFieldLabel"
+                                required="{Boolean}true"/>
+                            <dimensionfieldtitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="Dimension Drop Down Title"
+                                    name="./dimensionFieldTitle"
+                                    required="{Boolean}true"/>
+                            <downloadctalabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Download CTA Label"
+                                name="./downloadLabel"
+                                required="{Boolean}true"/>
+                            <downloadctatitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="Download CTA Title"
+                                    name="./downloadTitle"
+                                    required="{Boolean}true"/>
+                            <viewdetailsctalabel
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="View Details CTA Label"
+                                    name="./viewDetailsLabel"
+                                    required="{Boolean}true"/>
+                            <viewdetailsctatitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="View Details CTA Title"
+                                    name="./viewDetailsTitle"
+                                    required="{Boolean}true"/>
+                        </items>
+                    </column>
+                </items>
+            </wallpaper>
+            <Images
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Images"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <grid
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                class="alcs-parent-multifield"
+                                fieldLabel="Grids"
+                                max="50"
+                                min="3"
+                                name="./grids"
+                                rquired="{Boolean}true">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    alcs-commons-nested="JSON_STORE"
+                                    name="./grids">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+												<imagealt
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Image Alt "
+                                                    name="./imageAlt"
+                                                    required="{Boolean}true"/>
+                                                <baeimage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Desktop1024_1024"
+                                                    name="./baseImage"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content/dam/alcs"/>
+                                                <desktop1280_800
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Desktop1280_800"
+                                                    name="./desktop1280x800"
+                                                    rootPath="/content/dam/alcs"/>
+                                                <desktop1440_900
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Desktop1440_900"
+                                                    name="./desktop1440x900"
+                                                    rootPath="/content/dam/alcs"/>
+                                                <tablet1024_768
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Tablet1024_768"
+                                                    name="./tablet1024x768"
+                                                    rootPath="/content/dam/alcs"/>
+                                                <mobile640_960
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Mobile640_960"
+                                                    name="./mobile640x960"
+                                                    rootPath="/content/dam/alcs"/>
+                                                <mobile200_200
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Mobile200_200"
+                                                    name="./mobile200x200"
+                                                    rootPath="/content/dam/alcs"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </grid>
+                        </items>
+                    </column>
+                </items>
+            </Images>
+            <themes
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Themes"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/themes/cq:dialog/content/items/themes"/>
+            <padding
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Padding"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/padding/cq:dialog/content/items/padding"/>
+            <loadmore
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Load More Config"
+                sling:resourceType="/apps/alcs/components/content/includewidget"
+                path="/apps/alcs/components/content/platform/loadmore/cq:dialog/content/items/loadmore"/>
+        </items>
+    </content>
+</jcr:root>
